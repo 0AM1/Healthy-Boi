@@ -130,7 +130,7 @@ function updateCalendar(month, year) {
 
     const startDate = new Date('2025-08-06');
     const endDate = new Date('2025-09-30');
-    const today = new Date();
+    const today = new Date('2025-08-06T19:29:00+03:00'); // Current time: 07:29 PM IDT, August 06, 2025
     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
     monthYear.textContent = `${months[month]} ${year}`;
 
@@ -167,7 +167,7 @@ function updateCalendar(month, year) {
         dayDiv.dataset.week = week || '';
         dayDiv.dataset.date = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
         dayDiv.dataset.dayIndex = dayIndex;
-        if (week && date <= endDate && date >= startDate) {
+        if (week && date >= startDate && date <= endDate) {
             dayDiv.addEventListener('click', () => showModal(dayDiv, date < today));
         }
         calendar.appendChild(dayDiv);
@@ -262,7 +262,7 @@ async function showStreakModal(category) {
 
     const startDate = new Date('2025-08-06');
     const endDate = new Date('2025-09-30');
-    const today = new Date();
+    const today = new Date('2025-08-06T19:29:00+03:00'); // Current time: 07:29 PM IDT, August 06, 2025
     let streak = 0;
     let currentDate = new Date(startDate);
 
