@@ -31,7 +31,53 @@ let currentMonth = 7; // August (0-based)
 let currentYear = 2025;
 const startDate = new Date('2025-08-05'); // Start from yesterday
 const today = new Date(new Date().toDateString()); // Today at 00:00:00
+// Grab all the elements you’re working with
+const elements = {
+    prevMonth: document.getElementById('prevMonth'),
+    nextMonth: document.getElementById('nextMonth'),
+    streakButton: document.getElementById('streakButton'),
+    closeModal: document.getElementById('closeModal'),
+    closeStreakModal: document.getElementById('closeStreakModal')
+};
 
+// Add event listeners only if the elements exist
+if (elements.prevMonth) {
+    elements.prevMonth.addEventListener('click', () => {
+        // Your previous month navigation logic here
+    });
+} else {
+    console.error('Element with ID "prevMonth" not found');
+}
+
+if (elements.nextMonth) {
+    elements.nextMonth.addEventListener('click', () => {
+        // Your next month navigation logic here
+    });
+} else {
+    console.error('Element with ID "nextMonth" not found');
+}
+
+if (elements.streakButton) {
+    elements.streakButton.addEventListener('click', showStreakModal);
+} else {
+    console.error('Element with ID "streakButton" not found');
+}
+
+if (elements.closeModal) {
+    elements.closeModal.addEventListener('click', () => {
+        document.getElementById('modal').style.display = 'none';
+    });
+} else {
+    console.error('Element with ID "closeModal" not found');
+}
+
+if (elements.closeStreakModal) {
+    elements.closeStreakModal.addEventListener('click', () => {
+        document.getElementById('streak-modal').style.display = 'none';
+    });
+} else {
+    console.error('Element with ID "closeStreakModal" not found');
+}
 function initCalendar() {
     updateCalendar(currentMonth, currentYear);
     document.getElementById('prevMonth').addEventListener('click', () => {
