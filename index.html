@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Boi Challenge Calendar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js"></script>
+    <script type="module" src="script.js" defer></script>
+</head>
+    
+<body>
+    <div class="sidebar">
+        <div class="achievement" data-category="coffee" title="Coffee Streak">
+            <i class="fas fa-coffee"></i>
+        </div>
+        <div class="achievement" data-category="booze" title="Booze Streak">
+            <i class="fas fa-wine-glass"></i>
+        </div>
+        <div class="achievement" data-category="sports" title="Sports Streak">
+            <i class="fas fa-running"></i>
+        </div>
+        <div class="achievement" data-category="food" title="Food Streak">
+            <i class="fas fa-utensils"></i>
+        </div>
+        <div class="achievement" data-category="sleep" title="Sleep Streak">
+            <i class="fas fa-bed"></i>
+        </div>
+    </div>
+    <div class="container">
+        <h1>Healthy Boi Challenge</h1>
+        <div class="navigation">
+            <button id="prevMonth">Previous</button>
+            <h2 id="monthYear"></h2>
+            <button id="nextMonth">Next</button>
+        </div>
+        <div id="calendar"></div>
+    </div>
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div id="taskList"></div>
+        </div>
+    </div>
+    <div id="streakModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="streakTitle"></h2>
+            <p id="streakCount"></p>
+        </div>
+    </div>
+</body>
+
+</html>
+
